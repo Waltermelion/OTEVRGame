@@ -35,9 +35,9 @@ public class Puddle : MonoBehaviour
     }
     private void Subtract()
     {
-        /*Color color = puddlemat.material.color;
-        color.a -= 50;
-        puddlemat.material.color = color;*/
+        Color color = puddlemat.material.color;
+        color.a -= 0.2f;
+        puddlemat.material.color = color;
         iteration -= 1;        
         cleaniteration = true;
     }
