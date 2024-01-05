@@ -401,6 +401,7 @@ GameObject:
   - component: {fileID: 782103439}
   - component: {fileID: 782103438}
   - component: {fileID: 782103443}
+  - component: {fileID: 782103444}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -425,13 +426,16 @@ MonoBehaviour:
   - 2
   - 4
   - 1.5
+  - 1
   loop: 0
   panicDuration: 5
   panicSpeed: 15
   panicWaypoints: 20
   panicRadius: 4
+  currentWaypointIndex: 0
   currentState: 0
-  lastState: 0
+  currentIdleState: 0
+  npcIdleStates: 00000000010000000200000004000000
 --- !u!136 &782103439
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -542,6 +546,27 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &782103444
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782103437}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &890953641
 GameObject:
   m_ObjectHideFlags: 0
