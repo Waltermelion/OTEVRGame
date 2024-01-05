@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4300323117189959009}
   - component: {fileID: 6927170553575618115}
   - component: {fileID: 597893823061220540}
+  - component: {fileID: 4403494597448084732}
+  - component: {fileID: 5485263131382787548}
   m_Layer: 0
   m_Name: sniperpivot
   m_TagString: Untagged
@@ -129,7 +131,19 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5485263131382787548}
+        m_TargetAssemblyTypeName: SniperHandler, Assembly-CSharp
+        m_MethodName: ShootSniper
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
@@ -163,7 +177,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 3344519065402167664}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
@@ -210,10 +224,62 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
-  m_StartingSingleGrabTransformers:
-  - {fileID: 8954230190600731991}
+  m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!59 &4403494597448084732
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471133830464097423}
+  m_ConnectedBody: {fileID: 1693903324712496678}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 1
+  m_ExtendedLimits: 0
+  m_UseAcceleration: 0
+  m_Limits:
+    min: -27.858932
+    max: 59.410305
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!114 &5485263131382787548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471133830464097423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2f4d9e828a5584b9db811d2c6a1cbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullets: 5
+  shootPoint: {fileID: 7649268623768086267}
 --- !u!1 &4568525774520203253
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +612,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e14ba0263b9841a819caa2b6caafa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7649268623768086267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8246651325565264584}
+  m_Layer: 0
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8246651325565264584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649268623768086267}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.017568905, y: 0.015355915, z: 0.6115844}
+  m_LocalScale: {x: 0.07049481, y: 1.02379, z: 0.06949322}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8043850797762527719}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4445720272967637760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -632,7 +729,11 @@ PrefabInstance:
     - {fileID: 8836884243694986677, guid: ec97b762431ff5a4289db33d4ea95d39, type: 3}
     - {fileID: 4025229583709891898, guid: ec97b762431ff5a4289db33d4ea95d39, type: 3}
     - {fileID: 4365501155205732807, guid: ec97b762431ff5a4289db33d4ea95d39, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5914106633442417383, guid: ec97b762431ff5a4289db33d4ea95d39,
+        type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 8246651325565264584}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6688278474020225431, guid: ec97b762431ff5a4289db33d4ea95d39,
         type: 3}
@@ -665,7 +766,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6236349764707421273, guid: ec97b762431ff5a4289db33d4ea95d39,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5525755859575990935}
+      addedObject: {fileID: 5988053925379425932}
     - targetCorrespondingSourceObject: {fileID: 6668233972079142311, guid: ec97b762431ff5a4289db33d4ea95d39,
         type: 3}
       insertIndex: -1
@@ -1615,8 +1716,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4445720272967637760}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &5525755859575990935
-MeshCollider:
+--- !u!65 &5988053925379425932
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1633,10 +1734,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7562719768433934373, guid: b373bda92071e144cb2445777132c051, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.0071754954, y: 0.003166816, z: 0.0048295897}
+  m_Center: {x: -0.005342771, y: -0.025515448, z: 0.0005271552}
 --- !u!1 &7787781962520208130 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5882155651090298882, guid: ec97b762431ff5a4289db33d4ea95d39,

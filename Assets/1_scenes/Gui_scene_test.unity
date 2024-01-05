@@ -1438,57 +1438,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 471133830464097423, guid: 416dc5c63d5744e4abc71e46e2de0374,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4410601168302528123}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 416dc5c63d5744e4abc71e46e2de0374, type: 3}
---- !u!1 &4410601168302528122 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 471133830464097423, guid: 416dc5c63d5744e4abc71e46e2de0374,
-    type: 3}
-  m_PrefabInstance: {fileID: 4410601168302528121}
-  m_PrefabAsset: {fileID: 0}
---- !u!59 &4410601168302528123
-HingeJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4410601168302528122}
-  m_ConnectedBody: {fileID: 8292648868467098576}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
-  serializedVersion: 2
-  m_UseSpring: 0
-  m_Spring:
-    spring: 0
-    damper: 0
-    targetPosition: 0
-  m_UseMotor: 0
-  m_Motor:
-    targetVelocity: 0
-    force: 0
-    freeSpin: 0
-  m_UseLimits: 1
-  m_ExtendedLimits: 0
-  m_UseAcceleration: 0
-  m_Limits:
-    min: -27.858932
-    max: 59.410305
-    bounciness: 0
-    bounceMinVelocity: 0.2
-    contactDistance: 0
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!1001 &4430837729576116674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1557,12 +1508,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e98335fdc3285b84ab658a82c971cafb, type: 3}
---- !u!54 &8292648868467098576 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 1693903324712496678, guid: 416dc5c63d5744e4abc71e46e2de0374,
-    type: 3}
-  m_PrefabInstance: {fileID: 4410601168302528121}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
