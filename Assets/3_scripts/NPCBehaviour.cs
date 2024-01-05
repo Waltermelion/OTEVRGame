@@ -24,6 +24,7 @@ public class NPCBehaviour : MonoBehaviour
     private int currentWaypointIndex = 0;
     private NavMeshAgent navMeshAgent;
     private float defaultSpeed;
+    private Animator animator;
 
     public enum NPCState
     {
@@ -32,14 +33,27 @@ public class NPCBehaviour : MonoBehaviour
         Panic
     }
 
+    public enum NPCIdleState
+    {
+        RegularIdle,
+        Eat,
+        Talk,
+        Exercise,
+        Smoke
+    }
+
     [Header("State Settings")]
     public NPCState currentState;
-    public NPCState lastState;
+    public NPCIdleState currentIdleState;
+    public NPCIdleState[] npcIdleStates;
+
+    private NPCState lastState;
 
     void Start()
     {
         SetState(NPCState.Moving);
         navMeshAgent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
         defaultSpeed = navMeshAgent.speed;
         waypoints = new Transform[directionsParent.childCount];
 
@@ -57,10 +71,6 @@ public class NPCBehaviour : MonoBehaviour
         {
             switch (currentState)
             {
-                case NPCState.Idle:
-                    // Optionally, you can add some logic here for the Idle state
-                    break;
-
                 case NPCState.Moving:
                     // Move to the current waypoint
                     navMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
@@ -69,7 +79,7 @@ public class NPCBehaviour : MonoBehaviour
                     {
                         if (currentState == NPCState.Panic)
                         {
-                            goto ContinueWhileLoop; // Continue with the next iteration of the while loop
+                            goto ContinueWhileLoop;
                         }
                         yield return null;
                     }
@@ -77,8 +87,15 @@ public class NPCBehaviour : MonoBehaviour
                     // Check if the index is within the bounds of the timeAtEachPoint array
                     if (currentWaypointIndex < timeAtEachPoint.Length)
                     {
+                        SetState(NPCState.Idle);
+
                         // Wait for the specified time at the waypoint
                         yield return new WaitForSeconds(timeAtEachPoint[currentWaypointIndex]);
+
+                        SetState(NPCState.Moving);
+
+                        // Trigger Movement Animation Again, UNCOMMENT WHEN ANIMATIONS ARE SETUP
+                        // animator.SetTrigger("Moving");
                     }
 
                     // Move to the next waypoint
@@ -119,6 +136,11 @@ public class NPCBehaviour : MonoBehaviour
     {
         lastState = currentState;
         currentState = newState;
+
+        if (currentState == NPCState.Idle)
+        {
+            HandleIdleStates();
+        }
     }
 
     // Function to get a random position around a given point
@@ -130,7 +152,7 @@ public class NPCBehaviour : MonoBehaviour
         return randomPosition;
     }
 
-    // DEBUG SECTION
+    #region DEBUG
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -155,5 +177,13 @@ public class NPCBehaviour : MonoBehaviour
                 Gizmos.DrawWireSphere(waypoints[i].position, 0.5f);
             }
         }
+    }
+    #endregion
+
+    public void HandleIdleStates()
+    {
+        string animationString = npcIdleStates[currentWaypointIndex].ToString();
+        //animator.SetTrigger(animationString);
+        Debug.Log(animationString);
     }
 }
