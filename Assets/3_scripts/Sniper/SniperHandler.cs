@@ -34,11 +34,12 @@ public class SniperHandler : MonoBehaviour
                 if (hitInfo.collider.gameObject.tag == "Enemy")
                 {
                     //kill enemy
+                    Debug.Log("Enemy Killed");
                     
                 }else if (hitInfo.collider.gameObject.tag == "Npc")
                 {
                     //kill Npc
-                    
+                    Debug.Log("NPC Killed");
                 }
                 //shooting sound
                 //shooting animation
