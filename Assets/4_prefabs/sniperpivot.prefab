@@ -180,7 +180,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_AttachTransform: {fileID: 6180772908870049333}
-  m_SecondaryAttachTransform: {fileID: 0}
+  m_SecondaryAttachTransform: {fileID: 444389834903688324}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
@@ -575,6 +575,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1252727668689979944}
   m_SourcePrefab: {fileID: 100100000, guid: ec97b762431ff5a4289db33d4ea95d39, type: 3}
+--- !u!4 &444389834903688324 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7093602521779846050, guid: ec97b762431ff5a4289db33d4ea95d39,
+    type: 3}
+  m_PrefabInstance: {fileID: 7231448237565685542}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &650733535782539623 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7880346519209688641, guid: ec97b762431ff5a4289db33d4ea95d39,
