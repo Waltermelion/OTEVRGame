@@ -7,6 +7,7 @@ public class SniperHandler : MonoBehaviour
     public int bullets;
     public GameObject shootPoint;
     private bool sniperShootable;
+    public AudioSource sniperASource;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class SniperHandler : MonoBehaviour
     {
         if (bullets > 0 && sniperShootable)
         {
+            sniperASource.Play();
             //Implement delay damage github copilot
             RaycastHit hitInfo = new RaycastHit();
             bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
@@ -33,8 +35,9 @@ public class SniperHandler : MonoBehaviour
                 }
                 //shooting sound
                 //shooting animation
-                bullets--;
+                
             }
+            bullets--;
         }
         else
         {
