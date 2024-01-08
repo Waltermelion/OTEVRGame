@@ -59,7 +59,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 78
   m_CollisionDetection: 0
@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Colliders:
   - {fileID: 5907518669774959755}
   - {fileID: 1252727668689979944}
+  - {fileID: 4340220551933034884}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -181,18 +182,18 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 6180772908870049333}
   m_SecondaryAttachTransform: {fileID: 444389834903688324}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
-  m_MatchAttachRotation: 1
+  m_MatchAttachRotation: 0
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 2
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
-  m_TrackPosition: 1
+  m_TrackPosition: 0
   m_SmoothPosition: 0
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
@@ -204,7 +205,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
