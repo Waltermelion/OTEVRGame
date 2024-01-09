@@ -11,6 +11,6 @@ public class tripepos : MonoBehaviour
     void Update()
     {
         //meter a posição do sniperpos em cima do tripe
-        //sniperpos.transform.position = transform.position.
+        sniperpos.transform.position = transform.position;
     }
 }
