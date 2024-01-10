@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3647101838017489367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6648214605279801383}
+  m_Layer: 0
+  m_Name: SliderTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6648214605279801383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3647101838017489367}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 3.028}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1341186194282663525}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &4400040652471783215
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +460,11 @@ PrefabInstance:
     - {fileID: 8836884243694986677, guid: ec97b762431ff5a4289db33d4ea95d39, type: 3}
     - {fileID: 4025229583709891898, guid: ec97b762431ff5a4289db33d4ea95d39, type: 3}
     - {fileID: 4365501155205732807, guid: ec97b762431ff5a4289db33d4ea95d39, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8558979385831088451, guid: ec97b762431ff5a4289db33d4ea95d39,
+        type: 3}
+      insertIndex: 8
+      addedObject: {fileID: 6648214605279801383}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6688278474020225431, guid: ec97b762431ff5a4289db33d4ea95d39,
         type: 3}
@@ -475,6 +510,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 9045665859121512855}
+    - targetCorrespondingSourceObject: {fileID: 6236349764707421273, guid: ec97b762431ff5a4289db33d4ea95d39,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7176556722982480474}
     - targetCorrespondingSourceObject: {fileID: 6668233972079142311, guid: ec97b762431ff5a4289db33d4ea95d39,
         type: 3}
       insertIndex: -1
@@ -726,6 +765,12 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2324548245084212496, guid: b373bda92071e144cb2445777132c051, type: 3}
+--- !u!4 &1341186194282663525 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8558979385831088451, guid: ec97b762431ff5a4289db33d4ea95d39,
+    type: 3}
+  m_PrefabInstance: {fileID: 7231448237565685542}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1777933122876031538 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9004735364825836820, guid: ec97b762431ff5a4289db33d4ea95d39,
@@ -1287,6 +1332,35 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &7176556722982480474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3661625278737687423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d93bc52fb72b14ebc2d470a3aa821c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: 0.02
+  target: {fileID: 6648214605279801383}
+  OnReached:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5813528070703455607}
+        m_TargetAssemblyTypeName: SniperHandler, Assembly-CSharp
+        m_MethodName: Slide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3889666135333869348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5882155651090298882, guid: ec97b762431ff5a4289db33d4ea95d39,

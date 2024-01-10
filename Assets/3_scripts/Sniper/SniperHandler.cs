@@ -8,10 +8,10 @@ public class SniperHandler : MonoBehaviour
 {
     public int bullets;
     public GameObject shootPoint;
-    private bool sniperShootable = true;
     public AudioSource sniperASource;
     public AudioClip shootSound;
     public AudioClip noBulletSound;
+    private bool hasSlide = true;
 
     // Start is called before the first frame update
     void Start()
@@ -23,9 +23,12 @@ public class SniperHandler : MonoBehaviour
     }
     public void ShootSniper()
     {
-        if (bullets > 0 && sniperShootable)
+        if (bullets > 0 && hasSlide)
         {
+            //shooting sound            
             sniperASource.PlayOneShot(shootSound);
+            //shooting animation
+
             //Implement delay damage github copilot
             RaycastHit hitInfo = new RaycastHit();
             bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
@@ -40,12 +43,9 @@ public class SniperHandler : MonoBehaviour
                 {
                     //kill Npc
                     Debug.Log("NPC Killed");
-                }
-                //shooting sound
-                //shooting animation
-                
+                }         
             }
-            sniperShootable = false;
+            hasSlide = false;
             bullets--;
         }
         else
@@ -53,5 +53,10 @@ public class SniperHandler : MonoBehaviour
             //No bullets sound
             sniperASource.PlayOneShot(noBulletSound);
         }
+    }
+    public void Slide()
+    {
+        hasSlide = true;
+        sniperASource.PlayOneShot(noBulletSound);
     }
 }
