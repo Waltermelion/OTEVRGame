@@ -7,14 +7,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Hidden_MalyaWka_ScreenSpaceCavity_Cavity
+  m_Name: WhiteFromShader
   m_Shader: {fileID: 4800000, guid: 6793d7cdfe099484c869e53d845077a0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
+  m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
   m_CustomRenderQueue: 2000
   stringTagMap:
@@ -43,7 +43,7 @@ Material:
     - _ZWrite: 1
     - _ZWriteMode: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
     - _HighlightColor: {r: 1, g: 1, b: 0.965, a: 1}
-    - _ShadowColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _ShadowColor: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 1}
   m_BuildTextureStacks: []
