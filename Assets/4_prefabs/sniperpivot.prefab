@@ -90,9 +90,9 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 78
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &7704657295176493430
 MonoBehaviour:
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_AttachTransform: {fileID: 6180772908870049333}
   m_SecondaryAttachTransform: {fileID: 444389834903688324}
   m_UseDynamicAttach: 1
-  m_MatchAttachPosition: 1
+  m_MatchAttachPosition: 0
   m_MatchAttachRotation: 0
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
-  m_TrackPosition: 0
+  m_TrackPosition: 1
   m_SmoothPosition: 0
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
