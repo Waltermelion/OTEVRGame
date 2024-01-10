@@ -11,6 +11,7 @@ public class SniperHandler : MonoBehaviour
     public AudioSource sniperASource;
     public AudioClip shootSound;
     public AudioClip noBulletSound;
+    public AudioClip reload1Sound;
     private bool hasSlide = true;
 
     // Start is called before the first frame update
@@ -57,6 +58,6 @@ public class SniperHandler : MonoBehaviour
     public void Slide()
     {
         hasSlide = true;
-        sniperASource.PlayOneShot(noBulletSound);
+        sniperASource.PlayOneShot(reload1Sound);
     }
 }
