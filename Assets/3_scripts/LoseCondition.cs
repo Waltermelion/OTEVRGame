@@ -10,6 +10,7 @@ public class LoseCondition : MonoBehaviour
         if (other.gameObject.name == "LoseCondition")
         {
             //Lose
+            loseCanvas.SetActive(true);
             Debug.Log("Player lost");
         }
     }
