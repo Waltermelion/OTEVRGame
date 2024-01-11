@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.AI;
 
 public class SniperHandler : MonoBehaviour
 {
@@ -22,6 +23,13 @@ public class SniperHandler : MonoBehaviour
 
         bullets = 5;
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ShootSniper();
+        }
+    }
     public void ShootSniper()
     {
         if (bullets > 0 && hasSlide)
@@ -32,19 +40,30 @@ public class SniperHandler : MonoBehaviour
 
             //Implement delay damage github copilot
             RaycastHit hitInfo = new RaycastHit();
-            bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
+            bool hit = Physics.Raycast(shootPoint.gameObject.transform.position,shootPoint.transform.forward, out hitInfo);
             if (hit)
             {                
                 if (hitInfo.collider.gameObject.tag == "Enemy")
                 {
                     //kill enemy
                     Debug.Log("Enemy Killed");
-                    
-                }else if (hitInfo.collider.gameObject.tag == "Npc")
+                    //Invoke("KillTarget", 1f);
+                    hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().enabled = false;
+                    hitInfo.collider.gameObject.GetComponent<NavMeshAgent>().speed = 0f;
+                    transform.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                    transform.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
+                }
+                else if (hitInfo.collider.gameObject.tag == "Npc")
                 {
                     //kill Npc
-                    Debug.Log("NPC Killed");
-                }         
+                    Debug.Log("Civilian Killed");
+                    Invoke("KillTarget", 1f);
+                    hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().enabled = false;
+                    hitInfo.collider.gameObject.GetComponent<NavMeshAgent>().speed = 0f;
+                    transform.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                    transform.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
+                }
+                Debug.Log("Hit: " + hitInfo.collider.name);
             }
             hasSlide = false;
             bullets--;
@@ -59,5 +78,9 @@ public class SniperHandler : MonoBehaviour
     {
         hasSlide = true;
         sniperASource.PlayOneShot(reload1Sound);
+    }
+    private void KillTarget(RaycastHit infohit)
+    {
+
     }
 }

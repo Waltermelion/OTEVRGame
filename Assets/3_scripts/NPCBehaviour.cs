@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class NPCBehaviour : MonoBehaviour
@@ -19,6 +20,9 @@ public class NPCBehaviour : MonoBehaviour
     public float panicSpeed = 10f;
     public int panicWaypoints = 15;
     public float panicRadius = 6f;
+
+    [Header("Sniper Pivot Object")]
+    public UnityEvent OnSniperShoot;
 
     private Transform[] waypoints;
     private int currentWaypointIndex = 0;
@@ -51,6 +55,7 @@ public class NPCBehaviour : MonoBehaviour
 
     void Start()
     {
+        OnSniperShoot.AddListener(ShotsFired);
         SetState(NPCState.Moving);
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
@@ -185,5 +190,10 @@ public class NPCBehaviour : MonoBehaviour
         string animationString = npcIdleStates[currentWaypointIndex].ToString();
         //animator.SetTrigger(animationString);
         Debug.Log(animationString);
+    }
+
+    private void ShotsFired()
+    {
+        SetState(NPCState.Panic);
     }
 }
