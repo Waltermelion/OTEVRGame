@@ -7,6 +7,7 @@ TagManager:
   - mop
   - Meteor
   - Enemy
+  - Npc
   layers:
   - Default
   - TransparentFX
