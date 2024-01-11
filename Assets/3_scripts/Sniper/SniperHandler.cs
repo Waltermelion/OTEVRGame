@@ -5,6 +5,7 @@ using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using UnityEditor.PackageManager;
 
 public class SniperHandler : MonoBehaviour
 {
@@ -50,25 +51,25 @@ public class SniperHandler : MonoBehaviour
                 {
                     //kill enemy
                     Debug.Log("Enemy Killed");
-                    //Invoke("KillTarget", 1f);
-                    hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().enabled = false;
+                    KillTarget(hitInfo);
+                    /*hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().enabled = false;
                     hitInfo.collider.gameObject.GetComponent<NavMeshAgent>().speed = 0f;
                     hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().animator.SetBool("Died", true);
                     hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().panicSpeed = 0f;
                     transform.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-                    transform.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
+                    transform.gameObject.GetComponent<XRGrabInteractable>().enabled = false;*/
                 }
                 else if (hitInfo.collider.gameObject.tag == "Npc")
                 {
                     //kill Npc
                     Debug.Log("Civilian Killed");
-                    Invoke("KillTarget", 1f);
-                    hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().enabled = false;
+                    KillTarget(hitInfo);
+                    /*hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().enabled = false;
                     hitInfo.collider.gameObject.GetComponent<NavMeshAgent>().speed = 0f;
                     hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().animator.SetBool("Died", true);
                     hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().panicSpeed = 0f;
                     transform.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-                    transform.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
+                    transform.gameObject.GetComponent<XRGrabInteractable>().enabled = false;*/
                 }
                 Debug.Log("Hit: " + hitInfo.collider.name);
             }
@@ -88,6 +89,12 @@ public class SniperHandler : MonoBehaviour
     }
     private void KillTarget(RaycastHit infohit)
     {
+        infohit.collider.gameObject.GetComponent<NPCBehaviour>().enabled = false;
+        infohit.collider.gameObject.GetComponent<NavMeshAgent>().speed = 0f;
+        infohit.collider.gameObject.GetComponent<NPCBehaviour>().animator.SetBool("Died", true);
+        infohit.collider.gameObject.GetComponent<NPCBehaviour>().panicSpeed = 0f;
+        transform.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        transform.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
 
     }
 }

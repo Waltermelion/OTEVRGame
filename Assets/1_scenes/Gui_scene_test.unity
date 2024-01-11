@@ -1873,46 +1873,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: sniperpivot
       objectReference: {fileID: 0}
-    - target: {fileID: 4690300570062050878, guid: 62343007400a16646bbe944f5a33ec64,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5813528070703455607, guid: 62343007400a16646bbe944f5a33ec64,
-        type: 3}
-      propertyPath: OnSniperShoot.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5813528070703455607, guid: 62343007400a16646bbe944f5a33ec64,
-        type: 3}
-      propertyPath: OnSniperShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5813528070703455607, guid: 62343007400a16646bbe944f5a33ec64,
         type: 3}
       propertyPath: OnSniperShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1777753467}
-    - target: {fileID: 5813528070703455607, guid: 62343007400a16646bbe944f5a33ec64,
-        type: 3}
-      propertyPath: OnSniperShoot.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5813528070703455607, guid: 62343007400a16646bbe944f5a33ec64,
-        type: 3}
-      propertyPath: OnSniperShoot.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShotsFired
-      objectReference: {fileID: 0}
-    - target: {fileID: 5813528070703455607, guid: 62343007400a16646bbe944f5a33ec64,
-        type: 3}
-      propertyPath: OnSniperShoot.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: NPCBehaviour, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5813528070703455607, guid: 62343007400a16646bbe944f5a33ec64,
-        type: 3}
-      propertyPath: OnSniperShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

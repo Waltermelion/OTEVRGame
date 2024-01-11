@@ -550,7 +550,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_CanTransitionToSelf: 0
 --- !u!1101 &2068069765409587242
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -709,7 +709,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 77022dcb1ad539f44a581b452c1f3d83, type: 2}
+  m_Motion: {fileID: 7400000, guid: 599dc12b50ffc5d4b82aaab2225b51ee, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -723,9 +723,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: RegularIdle
-    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: RegularIdle
     m_EventTreshold: 0
