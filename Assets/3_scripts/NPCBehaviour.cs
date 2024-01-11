@@ -15,16 +15,14 @@ public class NPCBehaviour : MonoBehaviour
     public bool loop = false;
 
     [Header("Panic Settings")]
-    // In seconds
-    public float panicDuration = 5f;
+    public GameObject panicWaypoints;
     public float panicSpeed = 10f;
-    public int panicWaypoints = 15;
-    public float panicRadius = 6f;    
 
     private Transform[] waypoints;
     private int currentWaypointIndex = 0;
     private NavMeshAgent navMeshAgent;
     private float defaultSpeed;
+    private bool canPanic;
     public Animator animator;
 
     public enum NPCState
@@ -55,6 +53,7 @@ public class NPCBehaviour : MonoBehaviour
         SetState(NPCState.Moving);
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        canPanic = true;
         defaultSpeed = navMeshAgent.speed;
         waypoints = new Transform[directionsParent.childCount];
 
@@ -74,6 +73,7 @@ public class NPCBehaviour : MonoBehaviour
             {
                 case NPCState.Moving:
                     // Move to the current waypoint
+                    navMeshAgent.speed = defaultSpeed;
                     navMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
                     animator.SetBool("Moving", true);
 
@@ -96,7 +96,6 @@ public class NPCBehaviour : MonoBehaviour
 
                         SetState(NPCState.Moving);
 
-                        // Trigger Movement Animation Again, UNCOMMENT WHEN ANIMATIONS ARE SETUP
                         animator.SetBool("Moving", true);
                     }
 
@@ -112,19 +111,21 @@ public class NPCBehaviour : MonoBehaviour
                     break;
 
                 case NPCState.Panic:
-                    navMeshAgent.speed = panicSpeed;
-
                     // Trigger panic movement with multiple waypoints
-                    for (int i = 0; i < panicWaypoints; i++)
+                    foreach (Transform child in panicWaypoints.transform)
                     {
-                        Vector3 randomDestination = GetRandomPositionAround(transform.position, panicRadius);
-                        navMeshAgent.SetDestination(randomDestination);
-                        yield return new WaitForSeconds(panicDuration / panicWaypoints);
+                        navMeshAgent.SetDestination(child.position);
+
+                        navMeshAgent.speed = panicSpeed;
+
+                            while (navMeshAgent.remainingDistance > navMeshAgent.stoppingDistance)
+                            {
+                                yield return null;
+                            }
                     }
 
                     // Go back to the last state
-                    SetState(lastState);
-                    navMeshAgent.speed = defaultSpeed;
+                    //SetState(lastState);
                     break;
             }
 
@@ -145,28 +146,23 @@ public class NPCBehaviour : MonoBehaviour
         }
     }
 
-    // Function to get a random position around a given point
-    Vector3 GetRandomPositionAround(Vector3 center, float radius)
-    {
-        float angle = Random.Range(0f, 2f * Mathf.PI);
-        float distance = Random.Range(0f, radius);
-        Vector3 randomPosition = center + new Vector3(Mathf.Cos(angle) * distance, 0f, Mathf.Sin(angle) * distance);
-        return randomPosition;
-    }
-
     #region DEBUG
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SetState(NPCState.Panic);
+            if (currentState != NPCState.Panic)
+            {
+                SetState(NPCState.Panic);
+            }
         }
-    }
 
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, panicRadius);
+        if (currentState == NPCState.Panic && canPanic)
+        {
+            canPanic = false;
+            StopAllCoroutines();
+            StartCoroutine(MoveToNextWaypoint());
+        }
     }
 
     void OnDrawGizmos()
