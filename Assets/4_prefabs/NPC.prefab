@@ -129,7 +129,7 @@ MonoBehaviour:
   - 1.5
   - 1
   loop: 0
-  panicDuration: 5
+  panicDuration: 500
   panicSpeed: 15
   panicWaypoints: 20
   panicRadius: 4
@@ -167,8 +167,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835665948733496434}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 8c28075e6e1a5c34ca899fd618879dd4, type: 3}
+  m_Controller: {fileID: 9100000, guid: 9c217909baee8394fa712056e9d7f08e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

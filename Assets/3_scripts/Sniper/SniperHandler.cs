@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class SniperHandler : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class SniperHandler : MonoBehaviour
     public AudioClip noBulletSound;
     public AudioClip reload1Sound;
     private bool hasSlide = true;
+    public UnityEvent OnSniperShoot;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +38,7 @@ public class SniperHandler : MonoBehaviour
         {
             //shooting sound            
             sniperASource.PlayOneShot(shootSound);
+            OnSniperShoot.Invoke();
             //shooting animation
 
             //Implement delay damage github copilot
@@ -50,6 +53,8 @@ public class SniperHandler : MonoBehaviour
                     //Invoke("KillTarget", 1f);
                     hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().enabled = false;
                     hitInfo.collider.gameObject.GetComponent<NavMeshAgent>().speed = 0f;
+                    hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().animator.SetBool("Died", true);
+                    hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().panicSpeed = 0f;
                     transform.gameObject.GetComponent<Rigidbody>().isKinematic = true;
                     transform.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
                 }
@@ -60,6 +65,8 @@ public class SniperHandler : MonoBehaviour
                     Invoke("KillTarget", 1f);
                     hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().enabled = false;
                     hitInfo.collider.gameObject.GetComponent<NavMeshAgent>().speed = 0f;
+                    hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().animator.SetBool("Died", true);
+                    hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().panicSpeed = 0f;
                     transform.gameObject.GetComponent<Rigidbody>().isKinematic = true;
                     transform.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
                 }

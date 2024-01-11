@@ -785,7 +785,8 @@ PrefabInstance:
       value: Joystick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7610412742751988093, guid: f987e56f5c36e264e888555e47dec1bc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f987e56f5c36e264e888555e47dec1bc, type: 3}
@@ -1003,6 +1004,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPC (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835665948733496434, guid: bb9f29ea543e46f48823281b31937fdb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4544344600723367208, guid: bb9f29ea543e46f48823281b31937fdb,
         type: 3}
@@ -1341,9 +1347,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4544344600723367208, guid: bb9f29ea543e46f48823281b31937fdb,
         type: 3}
+      propertyPath: panicWaypoints
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544344600723367208, guid: bb9f29ea543e46f48823281b31937fdb,
+        type: 3}
       propertyPath: directionsParent
       value: 
       objectReference: {fileID: 2006756384}
+    - target: {fileID: 4544344600723367208, guid: bb9f29ea543e46f48823281b31937fdb,
+        type: 3}
+      propertyPath: timeAtEachPoint.Array.data[1]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544344600723367208, guid: bb9f29ea543e46f48823281b31937fdb,
+        type: 3}
+      propertyPath: timeAtEachPoint.Array.data[2]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544344600723367208, guid: bb9f29ea543e46f48823281b31937fdb,
+        type: 3}
+      propertyPath: timeAtEachPoint.Array.data[3]
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4544344600723367208, guid: bb9f29ea543e46f48823281b31937fdb,
         type: 3}
       propertyPath: OnSniperShoot.m_PersistentCalls.m_Calls.Array.size
@@ -1358,7 +1384,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnSniperShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 73623220}
+      objectReference: {fileID: 1777753467}
     - target: {fileID: 4544344600723367208, guid: bb9f29ea543e46f48823281b31937fdb,
         type: 3}
       propertyPath: OnSniperShoot.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -1367,12 +1393,12 @@ PrefabInstance:
     - target: {fileID: 4544344600723367208, guid: bb9f29ea543e46f48823281b31937fdb,
         type: 3}
       propertyPath: OnSniperShoot.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShootSniper
+      value: ShotsFired
       objectReference: {fileID: 0}
     - target: {fileID: 4544344600723367208, guid: bb9f29ea543e46f48823281b31937fdb,
         type: 3}
       propertyPath: OnSniperShoot.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SniperHandler, Assembly-CSharp
+      value: NPCBehaviour, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4544344600723367208, guid: bb9f29ea543e46f48823281b31937fdb,
         type: 3}
@@ -1394,6 +1420,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1721685278}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1777753467 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4544344600723367208, guid: bb9f29ea543e46f48823281b31937fdb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1721685278}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85dbe5277e39f0a4c8e77eb05e4ffec6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1821927324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1455,12 +1493,22 @@ PrefabInstance:
     - target: {fileID: 3713819703641414333, guid: 871c1415f565ad348bcaed45c4f06155,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.706
+      value: 0.73
       objectReference: {fileID: 0}
     - target: {fileID: 3713819703641414333, guid: 871c1415f565ad348bcaed45c4f06155,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 39.247
+      value: 2.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944178228954395835, guid: 871c1415f565ad348bcaed45c4f06155,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.167
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944178228954395835, guid: 871c1415f565ad348bcaed45c4f06155,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.798
       objectReference: {fileID: 0}
     - target: {fileID: 5260008549120590489, guid: 871c1415f565ad348bcaed45c4f06155,
         type: 3}
@@ -1626,74 +1674,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2022319818}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &2038520889
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5202211970501327854, guid: 36eff8b49ecdca745894efb1d2ce5f8f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 5202211970501327854, guid: 36eff8b49ecdca745894efb1d2ce5f8f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 5202211970501327854, guid: 36eff8b49ecdca745894efb1d2ce5f8f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.834
-      objectReference: {fileID: 0}
-    - target: {fileID: 5202211970501327854, guid: 36eff8b49ecdca745894efb1d2ce5f8f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5202211970501327854, guid: 36eff8b49ecdca745894efb1d2ce5f8f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5202211970501327854, guid: 36eff8b49ecdca745894efb1d2ce5f8f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5202211970501327854, guid: 36eff8b49ecdca745894efb1d2ce5f8f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5202211970501327854, guid: 36eff8b49ecdca745894efb1d2ce5f8f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5202211970501327854, guid: 36eff8b49ecdca745894efb1d2ce5f8f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5202211970501327854, guid: 36eff8b49ecdca745894efb1d2ce5f8f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459442142708147920, guid: 36eff8b49ecdca745894efb1d2ce5f8f,
-        type: 3}
-      propertyPath: m_Name
-      value: Lever
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 36eff8b49ecdca745894efb1d2ce5f8f, type: 3}
 --- !u!1001 &382165495382199219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1898,6 +1878,41 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5813528070703455607, guid: 62343007400a16646bbe944f5a33ec64,
+        type: 3}
+      propertyPath: OnSniperShoot.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5813528070703455607, guid: 62343007400a16646bbe944f5a33ec64,
+        type: 3}
+      propertyPath: OnSniperShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5813528070703455607, guid: 62343007400a16646bbe944f5a33ec64,
+        type: 3}
+      propertyPath: OnSniperShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1777753467}
+    - target: {fileID: 5813528070703455607, guid: 62343007400a16646bbe944f5a33ec64,
+        type: 3}
+      propertyPath: OnSniperShoot.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5813528070703455607, guid: 62343007400a16646bbe944f5a33ec64,
+        type: 3}
+      propertyPath: OnSniperShoot.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShotsFired
+      objectReference: {fileID: 0}
+    - target: {fileID: 5813528070703455607, guid: 62343007400a16646bbe944f5a33ec64,
+        type: 3}
+      propertyPath: OnSniperShoot.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NPCBehaviour, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5813528070703455607, guid: 62343007400a16646bbe944f5a33ec64,
+        type: 3}
+      propertyPath: OnSniperShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1915,7 +1930,6 @@ SceneRoots:
   - {fileID: 379586019}
   - {fileID: 1708998811}
   - {fileID: 732160513}
-  - {fileID: 2038520889}
   - {fileID: 1343573790}
   - {fileID: 550936294}
   - {fileID: 298129654}

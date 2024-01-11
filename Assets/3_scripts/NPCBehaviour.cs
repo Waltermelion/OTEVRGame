@@ -19,16 +19,13 @@ public class NPCBehaviour : MonoBehaviour
     public float panicDuration = 5f;
     public float panicSpeed = 10f;
     public int panicWaypoints = 15;
-    public float panicRadius = 6f;
-
-    [Header("Sniper Pivot Object")]
-    public UnityEvent OnSniperShoot;
+    public float panicRadius = 6f;    
 
     private Transform[] waypoints;
     private int currentWaypointIndex = 0;
     private NavMeshAgent navMeshAgent;
     private float defaultSpeed;
-    private Animator animator;
+    public Animator animator;
 
     public enum NPCState
     {
@@ -55,7 +52,6 @@ public class NPCBehaviour : MonoBehaviour
 
     void Start()
     {
-        OnSniperShoot.AddListener(ShotsFired);
         SetState(NPCState.Moving);
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
@@ -79,6 +75,7 @@ public class NPCBehaviour : MonoBehaviour
                 case NPCState.Moving:
                     // Move to the current waypoint
                     navMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
+                    animator.SetBool("Moving", true);
 
                     while (navMeshAgent.pathPending || navMeshAgent.remainingDistance > navMeshAgent.stoppingDistance)
                     {
@@ -100,7 +97,7 @@ public class NPCBehaviour : MonoBehaviour
                         SetState(NPCState.Moving);
 
                         // Trigger Movement Animation Again, UNCOMMENT WHEN ANIMATIONS ARE SETUP
-                        // animator.SetTrigger("Moving");
+                        animator.SetBool("Moving", true);
                     }
 
                     // Move to the next waypoint
@@ -188,12 +185,16 @@ public class NPCBehaviour : MonoBehaviour
     public void HandleIdleStates()
     {
         string animationString = npcIdleStates[currentWaypointIndex].ToString();
-        //animator.SetTrigger(animationString);
+        animator.SetTrigger(animationString);
+        animator.SetBool("Moving", false);
         Debug.Log(animationString);
     }
 
-    private void ShotsFired()
+    public void ShotsFired()
     {
-        SetState(NPCState.Panic);
+        SetState(NPCState.Panic); 
+        animator.SetBool("Moving", false);
+        animator.SetBool("Panic", true);
+        Debug.Log("shots fired function");
     }
 }
