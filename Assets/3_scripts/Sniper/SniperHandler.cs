@@ -17,6 +17,7 @@ public class SniperHandler : MonoBehaviour
     public AudioClip reload1Sound;
     private bool hasSlide = true;
     public UnityEvent OnSniperShoot;
+    public GameObject securityObj;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,12 @@ public class SniperHandler : MonoBehaviour
             sniperASource.PlayOneShot(shootSound);
             OnSniperShoot.Invoke();
             //shooting animation
+
+            if (securityObj.activeSelf)
+            {
+                // Lose Condition
+                Debug.Log("Lose");
+            }
 
             //Implement delay damage github copilot
             RaycastHit hitInfo = new RaycastHit();
