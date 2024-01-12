@@ -24,6 +24,8 @@ public class NPCBehaviour : MonoBehaviour
     private float defaultSpeed;
     private bool canPanic;
     public Animator animator;
+    public AudioSource npcAudio;
+    public AudioClip[] npcAudioClips;
 
     public enum NPCState
     {
@@ -75,6 +77,8 @@ public class NPCBehaviour : MonoBehaviour
                     // Move to the current waypoint
                     navMeshAgent.speed = defaultSpeed;
                     navMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
+                    string animationString1 = npcIdleStates[currentWaypointIndex].ToString();
+                    animator.SetBool(animationString1, false);
                     animator.SetBool("Moving", true);
 
                     while (navMeshAgent.pathPending || navMeshAgent.remainingDistance > navMeshAgent.stoppingDistance)
@@ -96,6 +100,8 @@ public class NPCBehaviour : MonoBehaviour
 
                         SetState(NPCState.Moving);
 
+                        string animationString = npcIdleStates[currentWaypointIndex].ToString();
+                        animator.SetBool(animationString, false);
                         animator.SetBool("Moving", true);
                     }
 
@@ -181,13 +187,15 @@ public class NPCBehaviour : MonoBehaviour
     public void HandleIdleStates()
     {
         string animationString = npcIdleStates[currentWaypointIndex].ToString();
-        animator.SetTrigger(animationString);
+        animator.SetBool(animationString, true);
         animator.SetBool("Moving", false);
         Debug.Log(animationString);
     }
 
     public void ShotsFired()
     {
+        int i = Random.Range(0,npcAudioClips.Length);
+        npcAudio.PlayOneShot(npcAudioClips[i]);
         SetState(NPCState.Panic); 
         animator.SetBool("Moving", false);
         animator.SetBool("Panic", true);

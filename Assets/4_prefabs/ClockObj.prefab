@@ -299,19 +299,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4307545723925248251}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5397098353254746894}
-        m_TargetAssemblyTypeName: MainMenuUI, Assembly-CSharp
-        m_MethodName: OnClick_Quit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &2713178560152106159
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +313,6 @@ GameObject:
   - component: {fileID: 5668541653755987787}
   - component: {fileID: 7936178807762447812}
   - component: {fileID: 7907337931599763671}
-  - component: {fileID: 5397098353254746894}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -437,18 +424,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
---- !u!114 &5397098353254746894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2713178560152106159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25bb1c8b036420147b30ac20122f75d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8800833740669486939
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,19 +543,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4602176995714852730}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5397098353254746894}
-        m_TargetAssemblyTypeName: MainMenuUI, Assembly-CSharp
-        m_MethodName: OnClick_Settings
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1001 &6815521051880009886
 PrefabInstance:
   m_ObjectHideFlags: 0
