@@ -47,6 +47,7 @@ public class SniperHandler : MonoBehaviour
             {
                 // Lose Condition
                 Debug.Log("Lose");
+                Invoke("ShowDefeatScreen", 3f);
             }
 
             //Implement delay damage github copilot
@@ -59,6 +60,7 @@ public class SniperHandler : MonoBehaviour
                     //kill enemy
                     Debug.Log("Enemy Killed");
                     KillTarget(hitInfo);
+                    Invoke("ShowVictoryScreen", 3f);
                     /*hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().enabled = false;
                     hitInfo.collider.gameObject.GetComponent<NavMeshAgent>().speed = 0f;
                     hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().animator.SetBool("Died", true);
@@ -71,6 +73,7 @@ public class SniperHandler : MonoBehaviour
                     //kill Npc
                     Debug.Log("Civilian Killed");
                     KillTarget(hitInfo);
+                    Invoke("ShowDefeatScreen", 3f);
                     /*hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().enabled = false;
                     hitInfo.collider.gameObject.GetComponent<NavMeshAgent>().speed = 0f;
                     hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().animator.SetBool("Died", true);
@@ -103,5 +106,15 @@ public class SniperHandler : MonoBehaviour
         transform.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         transform.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
 
+    }
+
+    public void ShowDefeatScreen()
+    {
+        GameManager.Instance.DefeatScreen();
+    }
+
+    public void ShowVictoryScreen()
+    {
+        GameManager.Instance.VictoryScreen();
     }
 }

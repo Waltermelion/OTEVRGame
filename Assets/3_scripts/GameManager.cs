@@ -14,22 +14,14 @@ public enum GameState
 }
 #endregion
 
-#region SUB-STATES
-public enum GameSubState
-{
-    StandingUp,
-    Crouching,
-    Prone
-    // These are just examples, add as needed
-}
-
-#endregion
 
 public class GameManager : Singleton<GameManager>
 {
     [Header("Current States")]
     [SerializeField] private GameState gameState;
-    [SerializeField] private GameSubState currentGameSubState;
+
+    [Header("Panels")]
+    public GameObject defeatPanel, victoryPanel;
 
     protected override void Awake()
     {
@@ -51,10 +43,9 @@ public class GameManager : Singleton<GameManager>
         {
             gameState = GameState.MainMenu;
         }
-        else if (scene.name == "Main")
+        else if (scene.name == "Meggy_scene")
         {
             gameState = GameState.Playing;
-            //currentArenaState = ArenaState.StoneAgeArena; //Set inicial arena state
         }
     }
 
@@ -81,11 +72,10 @@ public class GameManager : Singleton<GameManager>
                 break;
             
             case GameState.Playing:
-                if (SceneManager.GetActiveScene().name != "Main")
+                if (SceneManager.GetActiveScene().name != "Meggy_scene")
                 {
-                    SceneManager.LoadScene("Main");
+                    SceneManager.LoadScene("Meggy_scene");
                 }
-                HandleGameSubState();
                 break;
 
             case GameState.Paused:
@@ -99,30 +89,6 @@ public class GameManager : Singleton<GameManager>
             case GameState.Quit:
                 Application.Quit();
                 break; 
-        }
-    }
-
-    public void SetArenaState(GameSubState newSubState)
-    {
-        currentGameSubState = newSubState;
-        HandleGameSubState();
-    }
-
-    private void HandleGameSubState()
-    {
-        switch (currentGameSubState)
-        {
-            case GameSubState.StandingUp:
-
-                break;
-
-            case GameSubState.Crouching:
-
-                break;
-
-            case GameSubState.Prone:
-
-                break;
         }
     }
 
@@ -157,5 +123,15 @@ public class GameManager : Singleton<GameManager>
     public void QuitGame()
     {
         SetGameState(GameState.Quit);
+    }
+
+    public void VictoryScreen()
+    {
+        victoryPanel.SetActive(true);
+    }
+
+    public void DefeatScreen()
+    {
+        defeatPanel.SetActive(true);
     }
 }
