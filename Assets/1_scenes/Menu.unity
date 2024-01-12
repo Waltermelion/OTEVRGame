@@ -4645,6 +4645,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Options
       objectReference: {fileID: 0}
+    - target: {fileID: 3947456800840946532, guid: f3efdeee9c5048543a2f5db8b66dcff8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688646447279022832, guid: f3efdeee9c5048543a2f5db8b66dcff8,
+        type: 3}
+      propertyPath: m_margin.y
+      value: 674.2262
+      objectReference: {fileID: 0}
     - target: {fileID: 5018555735973887760, guid: f3efdeee9c5048543a2f5db8b66dcff8,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4660,6 +4670,11 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1070248530}
+    - target: {fileID: 6061592436257183888, guid: f3efdeee9c5048543a2f5db8b66dcff8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 819
+      objectReference: {fileID: 0}
     - target: {fileID: 6322013495997659861, guid: f3efdeee9c5048543a2f5db8b66dcff8,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
