@@ -60,8 +60,9 @@ public class SniperHandler : MonoBehaviour
                 {
                     //kill enemy
                     Debug.Log("Enemy Killed");
-                    KillTarget(hitInfo);
-                    Invoke("ShowVictoryScreen", 3f);
+                    ShowVictoryScreen();
+                    KillTarget(hitInfo);                    
+                    //Invoke("ShowVictoryScreen", 3f);
                     /*hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().enabled = false;
                     hitInfo.collider.gameObject.GetComponent<NavMeshAgent>().speed = 0f;
                     hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().animator.SetBool("Died", true);
@@ -73,8 +74,9 @@ public class SniperHandler : MonoBehaviour
                 {
                     //kill Npc
                     Debug.Log("Civilian Killed");
-                    KillTarget(hitInfo);
-                    Invoke("ShowDefeatScreen", 3f);
+                    ShowDefeatScreen();
+                    KillTarget(hitInfo);                    
+                    //Invoke("ShowDefeatScreen", 3f);
                     /*hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().enabled = false;
                     hitInfo.collider.gameObject.GetComponent<NavMeshAgent>().speed = 0f;
                     hitInfo.collider.gameObject.GetComponent<NPCBehaviour>().animator.SetBool("Died", true);

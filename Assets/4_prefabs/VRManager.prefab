@@ -765,7 +765,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4345874018651888897}
   - component: {fileID: 5660865264938062043}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: XR Interaction Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2169,9 +2169,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4434332071683038265}
-  m_Layer: 0
+  - component: {fileID: 8313310020165022415}
+  m_Layer: 3
   m_Name: VRManager
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2194,6 +2195,29 @@ Transform:
   - {fileID: 3237924875986172751}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &8313310020165022415
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3799279207783127928}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4131443540202244986
 GameObject:
   m_ObjectHideFlags: 0
@@ -2489,7 +2513,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3237924875986172751}
   - component: {fileID: 3095053718355273161}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Input Action Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2533,10 +2557,35 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2714338979977564762}
     m_Modifications:
+    - target: {fileID: 60835933028567029, guid: 8805a6c6cd344a8489e2c5d75caa8375,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 254852191730416896, guid: 8805a6c6cd344a8489e2c5d75caa8375,
         type: 3}
       propertyPath: m_Name
       value: ClockObj
+      objectReference: {fileID: 0}
+    - target: {fileID: 254852191730416896, guid: 8805a6c6cd344a8489e2c5d75caa8375,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2215393705783961932, guid: 8805a6c6cd344a8489e2c5d75caa8375,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713178560152106159, guid: 8805a6c6cd344a8489e2c5d75caa8375,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932632247454404047, guid: 8805a6c6cd344a8489e2c5d75caa8375,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6335837169559264008, guid: 8805a6c6cd344a8489e2c5d75caa8375,
         type: 3}
@@ -2627,6 +2676,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8800833740669486939, guid: 8805a6c6cd344a8489e2c5d75caa8375,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
