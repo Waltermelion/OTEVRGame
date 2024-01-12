@@ -5,7 +5,7 @@ using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.AI;
 using UnityEngine.Events;
-using UnityEditor.PackageManager;
+//using UnityEditor.PackageManager;
 
 public class SniperHandler : MonoBehaviour
 {
