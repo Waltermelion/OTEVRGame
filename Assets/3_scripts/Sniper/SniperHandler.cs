@@ -5,7 +5,7 @@ using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.AI;
 using UnityEngine.Events;
-using UnityEditor.PackageManager;
+//using UnityEditor.PackageManager;
 
 public class SniperHandler : MonoBehaviour
 {
@@ -18,6 +18,7 @@ public class SniperHandler : MonoBehaviour
     private bool hasSlide = true;
     public UnityEvent OnSniperShoot;
     public GameObject securityObj;
+    public GameObject bloodPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -105,7 +106,7 @@ public class SniperHandler : MonoBehaviour
         infohit.collider.gameObject.GetComponent<NPCBehaviour>().panicSpeed = 0f;
         transform.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         transform.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
-
+        Instantiate(bloodPrefab,infohit.collider.transform.position, Quaternion.identity);
     }
 
     public void ShowDefeatScreen()
