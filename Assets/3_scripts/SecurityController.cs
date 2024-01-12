@@ -62,6 +62,6 @@ public class SecurityController : MonoBehaviour
 
     void PlayerLoses()
     {
-        
+        GameManager.Instance.DefeatScreen();
     }
 }
