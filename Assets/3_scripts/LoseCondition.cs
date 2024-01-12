@@ -11,6 +11,7 @@ public class LoseCondition : MonoBehaviour
         {
             //Lose
             //loseCanvas.SetActive(true);
+            GameManager.Instance.DefeatScreen();
             Debug.Log("Player lost");
         }
     }

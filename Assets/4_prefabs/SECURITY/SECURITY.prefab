@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01585b044209bf241a038264063542f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToSpawn: 5
+  timeToSpawn: 150
   timeToDespawn: 10
   timeThreshold: 4
   door: {fileID: 0}
