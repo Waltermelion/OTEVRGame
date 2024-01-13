@@ -1,4 +1,5 @@
 # Sniper City OTE VR Game
+## itch.io link: https://william-meneses.itch.io/sniper-city
 ## Summary
 This was a project for OTE class for university.
 
