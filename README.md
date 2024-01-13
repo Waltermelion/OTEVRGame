@@ -1,8 +1,18 @@
-# OTEVRGame
+# Sniper City OTE VR Game
 ## Summary
-This is a project for OTE class for University, it's a TBD VR game.
+This was a project for OTE class for university.
 
-Feel free to clone it and use it anyway you like!
+Sniper City is a VR game where the player is a sniper and they must kill the right target to win.
+
+They have 1 in game hour (5 minutes) and 5 bullets.
+
+Every NPC has a specific set of behaviours they will execute during those 5 minutes.
+
+The Checklist lists the behaviours the target has.
+
+Be carefull not to be spotted by the security guard!
+
+This project was specially difficult since due to PC performance constraints, testing the game while developing it was nearly impossible, having to build the game every time and test it on the Quest 2.
 
 ## Known Bugs:
 - Sometimes shooting an NPC won't register a kill (Might be a raycast problem)
